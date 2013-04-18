@@ -1,16 +1,6 @@
-.bundle
-.project
-.sass-cache
-.rvmrc
-/db/*.sqlite3
-/log/*.log
-/log/*.pid
+/log/
 /tmp/
 /config/database.yml
-/public/system
-/public/images
 /config/settings/development.yml
 *~
 *#*
-.dotcloud
-dotcloud.yml

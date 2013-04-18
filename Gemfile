@@ -1,5 +1,7 @@
 source 'http://rubygems.org'
 
+ruby '2.0.0'
+
 gem 'rails', '~> 3.2.13'
 
 gem 'pg', '~> 0.11'
@@ -44,9 +46,6 @@ gem 'meta-tags',			'~> 1.2', :require => 'meta_tags'
 # For virtual model
 gem 'basic_active_model',		'~> 1.0'
 
-# Configuration helper
-gem 'rails_config',			'~> 0.2'
-
 # Exception handling
 gem 'exceptional',			'~> 2.0'
 
@@ -60,6 +59,10 @@ gem 'routing-filter', '~> 0.3.0'
 
 gem 'pry-rails'
 
+gem 'rails_config'
+
+gem 'unicorn'
+
 # Asset template engines
 group :assets do
   gem 'sass-rails',			'~> 3.2.3'
@@ -68,6 +71,7 @@ group :assets do
 end
 
 group :development, :test do
+  gem 'thin'
   gem "rspec-rails",                    '~> 2.6'
   gem 'factory_girl_rails',		'~> 1.6'
   gem 'letter_opener'
