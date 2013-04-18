@@ -1,7 +1,7 @@
 class CacheTweet
   def self.last_tweets(nb, user)
     key = "Twitter##{user}"
-    last_tweets = $redis.get(key)
+    last_tweets = Rails.cache.read(key)
 
     if last_tweets.nil?
       begin
@@ -9,8 +9,7 @@ class CacheTweet
           container << { 'text' => object.text, 'created_at' => object.created_at }
           container
         end
-        $redis.set(key, last_tweets.to_json)
-        $redis.expire(key, Settings.redis.expire_tweet)
+        Rails.cache.write(key, last_tweets.to_json, expires_in: 1.hour)
       rescue
         last_tweets = [{ 'text' => "Aucun tweet disponible", 'created_at' => Time.now }]
       end

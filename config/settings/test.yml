@@ -9,13 +9,6 @@ mailer:
 aws_ses:
   access_key_id: ''
   secret_access_key: ''
-redis:
-  host: "localhost"
-  port: 6379 
-  password:
-  db: 2
-  expire_view: 86400
-  expire_tweet: 3600
 twitter:
   account: ''
   consumer_key: ''

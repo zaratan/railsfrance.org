@@ -1,6 +1,6 @@
 class Question < ActiveRecord::Base
   include Voteable
-  include Hiteable
+  #include Hiteable
   extend FriendlyId
   extend Sortable
 

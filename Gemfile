@@ -4,14 +4,14 @@ ruby '2.0.0'
 
 gem 'rails', '~> 3.2.13'
 
-gem 'pg', '~> 0.11'
+gem 'pg'
 gem 'simple_form', '~> 1.5'
 gem 'kaminari', '~> 0.12'
 gem 'make_voteable',			'~> 0.1'
 gem 'acts-as-taggable-on',		'~> 2.1'
 gem 'haml-rails',			'~> 0.3.5'
 gem 'friendly_id',			'~> 4.0.9'
-gem 'redis',				'~> 2.2'
+
 gem 'date_validator',			'~> 0.6.3'
 gem 'recaptcha',			'~> 0.3', :require => 'recaptcha/rails'
 gem 'httparty'
@@ -20,8 +20,8 @@ gem 'cancan',				'~> 1.6'
 gem 'devise',				'~> 1.1'
 
 # Js
-gem 'jquery-rails',			'~> 1.0'
-gem 'therubyracer',			'~> 0.9'
+gem 'jquery-rails'
+
 gem 'rails3-jquery-autocomplete',	'~> 1.0'
 
 # Geocoding solution

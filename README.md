@@ -10,7 +10,6 @@ railsfrance.org is built on the top of Rails 3.2.
 
 ### Prerequisites
 
-    sudo aptitude install redis-server
     sudo aptitude install libmagickwand-dev imagemagick
     sudo easy_install pygments
 
