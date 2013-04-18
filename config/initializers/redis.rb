@@ -1,3 +1,8 @@
 require 'redis'
 
-$redis = Redis.new(Settings.redis.to_hash)
+uri = begin
+        URI.parse(ENV["REDISTOGO_URL"])
+      rescue
+        Settings.redis
+      end
+$redis = Redis.new(:host => uri.host, :port => uri.port, :password => uri.password)
