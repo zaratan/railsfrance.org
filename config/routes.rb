@@ -34,19 +34,6 @@ RailsFrance::Application.routes.draw do
   match '/jobs/validate/:token' => 'jobs#validate', :as => 'validate_job'
   match '/jobs/edit/:token' => 'jobs#edit', :as => 'edit_job'
 
-  # Questions & Answers
-  resources :questions do
-    get :vote, :on => :member
-    get :autocomplete_tag_name, :on => :collection
-    resources :answers, :only => [:create] do
-      get :vote, :on => :member
-      get :accept, :on => :member
-    end
-  end
-
-  # Tags
-  resources :tags, :only => [:index]
-
   # Events
   resources :evenements, :controller => :events, :as => :events do
     get :attend, :on => :member

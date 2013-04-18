@@ -7,8 +7,7 @@ gem 'rails', '~> 3.2.13'
 gem 'pg'
 gem 'simple_form', '~> 1.5'
 gem 'kaminari', '~> 0.12'
-gem 'make_voteable',			'~> 0.1'
-gem 'acts-as-taggable-on',		'~> 2.1'
+
 gem 'haml-rails',			'~> 0.3.5'
 gem 'friendly_id',			'~> 4.0.9'
 

@@ -8,16 +8,12 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
-  make_voter
   gravtastic secure: true,size: 22
 
   friendly_id :username, use: :slugged
   paginates_per 20
 
   before_validation :website_prefix
-
-  has_many :questions
-  has_many :answers
 
   has_many :events
 

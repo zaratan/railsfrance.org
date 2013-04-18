@@ -4,13 +4,13 @@
       %li
         = link_to @meta_tags[:title], root_path, id: "homeRailsFrance"
       %li
-        = link_to "QUESTIONS", questions_path, class: class_for_tab(:questions)
-      %li
         = link_to "RESSOURCES", resources_path, class: class_for_tab(:resources)
       %li
         = link_to "EVENEMENTS", events_path, class: class_for_tab(:events)
       %li
         = link_to "JOBS", jobs_path,class: class_for_tab(:jobs)
+      %li
+        = link_to "QUESTIONS", 'https://groups.google.com/forum/?fromgroups#!forum/railsfrance', class: class_for_tab(:questions), target: :_blank
       %li
         = link_to "MEMBRES", users_path,class: class_for_tab(:users)
       %li
@@ -23,4 +23,3 @@
           = link_to "MON COMPTE", edit_user_registration_path, class: "connectionButton connected", title: "Accès à votre profil Rails France"
         - else
           = link_to "CONNEXION", new_user_session_path, class: "connectionButton", title: "Connexion à votre compte Rails France"
-

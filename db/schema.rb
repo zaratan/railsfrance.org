@@ -11,19 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121117153037) do
-
-  create_table "answers", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "question_id"
-    t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "up_votes",    :default => 0
-    t.integer  "down_votes",  :default => 0
-  end
-
-  add_index "answers", ["user_id", "question_id"], :name => "index_answers_on_user_id_and_question_id"
+ActiveRecord::Schema.define(:version => 20130418180134) do
 
   create_table "events", :force => true do |t|
     t.integer  "user_id"
@@ -77,41 +65,6 @@ ActiveRecord::Schema.define(:version => 20121117153037) do
 
   add_index "jobs", ["slug"], :name => "index_jobs_on_slug", :unique => true
 
-  create_table "questions", :force => true do |t|
-    t.integer  "user_id"
-    t.string   "title"
-    t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "up_votes",           :default => 0
-    t.integer  "answers_count",      :default => 0
-    t.integer  "down_votes",         :default => 0
-    t.integer  "accepted_answer_id"
-    t.integer  "views",              :default => 0
-    t.string   "slug"
-  end
-
-  add_index "questions", ["accepted_answer_id"], :name => "index_questions_on_accepted_answer_id"
-  add_index "questions", ["slug"], :name => "index_questions_on_slug", :unique => true
-  add_index "questions", ["user_id"], :name => "index_questions_on_user_id"
-
-  create_table "taggings", :force => true do |t|
-    t.integer  "tag_id"
-    t.integer  "taggable_id"
-    t.string   "taggable_type"
-    t.integer  "tagger_id"
-    t.string   "tagger_type"
-    t.string   "context"
-    t.datetime "created_at"
-  end
-
-  add_index "taggings", ["tag_id"], :name => "index_taggings_on_tag_id"
-  add_index "taggings", ["taggable_id", "taggable_type", "context"], :name => "index_taggings_on_taggable_id_and_taggable_type_and_context"
-
-  create_table "tags", :force => true do |t|
-    t.string "name"
-  end
-
   create_table "users", :force => true do |t|
     t.string   "email",                               :default => "", :null => false
     t.string   "encrypted_password",   :limit => 128, :default => "", :null => false
@@ -150,19 +103,5 @@ ActiveRecord::Schema.define(:version => 20121117153037) do
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
   add_index "users", ["slug"], :name => "index_users_on_slug", :unique => true
-
-  create_table "votings", :force => true do |t|
-    t.string   "voteable_type"
-    t.integer  "voteable_id"
-    t.string   "voter_type"
-    t.integer  "voter_id"
-    t.boolean  "up_vote",       :null => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "votings", ["voteable_type", "voteable_id", "voter_type", "voter_id"], :name => "unique_voters", :unique => true
-  add_index "votings", ["voteable_type", "voteable_id"], :name => "index_votings_on_voteable_type_and_voteable_id"
-  add_index "votings", ["voter_type", "voter_id"], :name => "index_votings_on_voter_type_and_voter_id"
 
 end
