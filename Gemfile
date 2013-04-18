@@ -48,6 +48,8 @@ gem 'basic_active_model',		'~> 1.0'
 # Exception handling
 gem 'exceptional',			'~> 2.0'
 
+gem 'coveralls', require: false
+
 gem 'whenever', :require => false
 
 gem "aws-ses", "~> 0.4.4", :require => 'aws/ses'
